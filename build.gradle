@@ -6,29 +6,45 @@ buildscript {
 }
 
 plugins {
-    id 'java'
-    id 'idea'
-    id 'org.springframework.boot' version '2.1.7.RELEASE'
-    id 'io.spring.dependency-management' version "1.0.8.RELEASE"
+    id "java"
+    id "idea"
+    id "org.springframework.boot" version "2.1.7.RELEASE"
+    id "io.spring.dependency-management" version "1.0.8.RELEASE"
 }
 
 sourceCompatibility = 11
 targetCompatibility = 11
 
 compileJava {
-    dependsOn processResources
-    options.compilerArgs += "-Xlint:unchecked"
-    options.compilerArgs += "-Xlint:deprecation"
+    dependsOn clean
+    options.encoding = "UTF-8"
+    options.compilerArgs += "-Xlint:all"
+    options.compilerArgs += "-Xlint:-processing"
+    options.compilerArgs += "-Xlint:-classfile"
 }
 
 compileTestJava {
-    options.compilerArgs += "-Xlint:unchecked"
-    options.compilerArgs += "-Xlint:deprecation"
+    options.compilerArgs += "-Xlint:all"
+    options.compilerArgs += "-Xlint:-processing"
+    options.compilerArgs += "-Xlint:-classfile"
 }
 
 bootJar {
     mainClassName = "yakisuzu.demo.DemoApplication"
-    archiveBaseName = name
+    archiveBaseName = project.name
+}
+
+task afterBuild {
+    doLast {
+        def srcJar = "./build/libs/${project.name}.jar"
+        def distJar = "./ops/app/${project.name}.jar"
+        println "mv $srcJar $distJar"
+        file(srcJar).renameTo(file(distJar))
+    }
+}
+
+build {
+    finalizedBy afterBuild
 }
 
 configurations {
@@ -43,20 +59,21 @@ repositories {
 
 dependencies {
     // spring
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.0'
-    implementation 'org.springframework.session:spring-session-core'
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    implementation "org.springframework.session:spring-session-core"
 
     // lombok
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly "org.projectlombok:lombok"
+    annotationProcessor "org.projectlombok:lombok"
+    testCompileOnly "org.projectlombok:lombok"
+    testAnnotationProcessor "org.projectlombok:lombok"
 
     // test
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation "org.springframework.security:spring-security-test"
 }
 
 wrapper {
-    gradleVersion = '5.6'
+    gradleVersion = "5.6"
 }
