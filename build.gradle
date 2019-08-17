@@ -1,15 +1,23 @@
 buildscript {
     ext {
         springBootVersion = "2.1.7.RELEASE"
-        lombokVersion = ""
+        lombokVersion = "1.18.8"
     }
 }
 
 plugins {
     id "java"
+    id "java-library"
     id "idea"
     id "org.springframework.boot" version "2.1.7.RELEASE"
     id "io.spring.dependency-management" version "1.0.8.RELEASE"
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.security:spring-security-bom:5.1.6.RELEASE"
+        mavenBom "org.springframework.session:spring-session-bom:Bean-SR3"
+    }
 }
 
 sourceCompatibility = 11
@@ -58,16 +66,23 @@ repositories {
 }
 
 dependencies {
-    // spring
-    implementation "org.springframework.boot:spring-boot-starter-web"
-    implementation "org.springframework.boot:spring-boot-starter-security"
+    // spring web
+    implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+
+    // spring security
+    implementation "org.springframework.security:spring-security-web" // spring-security-bom
+    implementation "org.springframework.security:spring-security-config" // spring-security-bom
+
+    // spring session
+//    implementation "org.springframework.session:spring-session-data-redis" // spring-session-bom
+    implementation 'io.lettuce:lettuce-core:5.1.8.RELEASE'
     implementation "org.springframework.session:spring-session-core"
 
     // lombok
-    compileOnly "org.projectlombok:lombok"
-    annotationProcessor "org.projectlombok:lombok"
-    testCompileOnly "org.projectlombok:lombok"
-    testAnnotationProcessor "org.projectlombok:lombok"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 
     // test
     testImplementation "org.springframework.boot:spring-boot-starter-test"
