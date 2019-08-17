@@ -45,7 +45,7 @@ bootJar {
 task afterBuild {
     doLast {
         def srcJar = "./build/libs/${project.name}.jar"
-        def distJar = "./ops/app/${project.name}.jar"
+        def distJar = "./ops/app/app.jar"
         println "mv $srcJar $distJar"
         file(srcJar).renameTo(file(distJar))
     }
