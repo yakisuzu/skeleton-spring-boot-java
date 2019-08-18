@@ -74,9 +74,8 @@ dependencies {
     implementation "org.springframework.security:spring-security-config" // spring-security-bom
 
     // spring session
-//    implementation "org.springframework.session:spring-session-data-redis" // spring-session-bom
-    implementation 'io.lettuce:lettuce-core:5.1.8.RELEASE'
-    implementation "org.springframework.session:spring-session-core"
+    implementation "org.springframework.session:spring-session-data-redis" // spring-session-bom
+    implementation "io.lettuce:lettuce-core:5.1.8.RELEASE"
 
     // lombok
     compileOnly "org.projectlombok:lombok:${lombokVersion}"

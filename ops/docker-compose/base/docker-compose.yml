@@ -1,10 +1,15 @@
-version: '2'
+version: "2"
 services:
   app:
     build: ../../app
     ports:
       - "8080:8080"
     depends_on:
-      - redis
-  redis:
-    image: redis:5
+      - session
+    links:
+      - "session:redis"
+  session:
+    image: redis:5-alpine
+    hostname: redis
+    ports:
+      - "6379:6379"
