@@ -1,15 +1,27 @@
-version: "2"
+version: "3.7"
 services:
   app:
     build: ../../app
     ports:
       - "8080:8080"
+    networks:
+      - backend
     depends_on:
       - session
-    links:
-      - "session:redis"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
   session:
     image: redis:5-alpine
-    hostname: redis
     ports:
-      - "6379:6379"
+      - "6379"
+    networks:
+      - backend
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+networks:
+  backend:
