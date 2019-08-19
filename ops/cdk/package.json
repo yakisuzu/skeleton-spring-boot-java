@@ -7,7 +7,9 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "cdk:diff": "cdk diff",
+    "cdk:synth": "cdk synth"
   },
   "devDependencies": {
     "@types/node": "8.10.45",
