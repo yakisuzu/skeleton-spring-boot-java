@@ -1,16 +1,19 @@
 package yakisuzu.demo;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.junit.jupiter.api.Test;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class DemoApplicationTests {
+import static org.assertj.core.api.Assertions.assertThat;
+
+//import org.junit.runner.RunWith;
+//import org.springframework.boot.test.context.SpringBootTest;
+
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+class DemoApplicationTests {
 
     @Test
-    public void contextLoads() {
+    void contextLoads() {
+        assertThat(true).isTrue();
+        // throw new AssertionError("aaaaaaaaaaa");
     }
-
 }

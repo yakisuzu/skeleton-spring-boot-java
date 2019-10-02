@@ -1,3 +1,4 @@
 spring:
   redis:
     host: session
+    port: 6379

@@ -84,8 +84,19 @@ dependencies {
     testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 
     // test
-    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation "org.junit.jupiter:junit-jupiter:5.5.2"
+    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+        exclude group: "junit", module: "junit" // junit4
+        exclude group: "org.hamcrest", module: "hamcrest-library"
+        exclude group: "org.hamcrest", module: "hamcrest-core"
+    }
     testImplementation "org.springframework.security:spring-security-test"
+}
+
+test {
+    // https://junit.org/junit5/docs/current/user-guide/#running-tests-ide-intellij-idea
+    // https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle
+    useJUnitPlatform()
 }
 
 wrapper {
