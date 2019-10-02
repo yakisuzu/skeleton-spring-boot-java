@@ -25,13 +25,24 @@ These additional references should also help you:
 * [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
 
 ## TODO
-- spring security
-  - OAuth2
-  - Amazon Cognito
-- spring session
-  - redis
-- docker compose
-  - localだけ
-  - redis+java
-- mysql
-  - いる？
+- app
+  - spring security
+    - OAuth2
+      - amazon cognito
+        - 登録API
+        - 削除API
+  - spring session
+    - redis
+  - swagger
+    - swagger specification v3
+  - test
+- infra
+  - docker compose
+    - localだけ
+    - redis+java
+  - cdk
+    - cognito
+    - ecs
+    - s3
+  - swagger
+    - swagger ui + s3?
