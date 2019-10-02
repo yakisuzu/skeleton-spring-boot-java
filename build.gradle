@@ -38,7 +38,7 @@ compileTestJava {
 }
 
 bootJar {
-    mainClassName = "yakisuzu.demo.DemoApplication"
+    mainClassName = "yakisuzu.Application"
     archiveBaseName = project.name
 }
 
