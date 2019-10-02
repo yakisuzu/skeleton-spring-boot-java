@@ -1,14 +1,11 @@
 package yakisuzu.demo;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-//import org.junit.runner.RunWith;
-//import org.springframework.boot.test.context.SpringBootTest;
-
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
+@SpringJUnitWebConfig
 class DemoApplicationTests {
 
     @Test
