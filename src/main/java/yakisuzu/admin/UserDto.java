@@ -6,7 +6,7 @@ import lombok.NonNull;
 
 @AllArgsConstructor
 @Getter
-public class UserDto {
+class UserDto {
     @NonNull
     private String mail;
 }

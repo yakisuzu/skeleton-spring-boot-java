@@ -93,6 +93,10 @@ dependencies {
     testImplementation "org.springframework.security:spring-security-test"
 }
 
+bootRun {
+    jvmArgs = ["-Dspring.profiles.active=local"]
+}
+
 test {
     jvmArgs = ["-Dspring.profiles.active=test"]
 

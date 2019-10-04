@@ -1,4 +1,5 @@
 spring:
-  redis:
-    host: session
-    port: 6379
+  data:
+    redis:
+      repositories:
+        enabled: false
