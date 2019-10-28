@@ -16,13 +16,20 @@
         - [ ] 削除API
   - [x] spring session
     - [x] redis
+  - [ ] logger
+    - [ ] log設定
+      - [ ] 標準出力(STD) or エラー出力(STD_ERR)
+      - [x] bootRun(ローカル)はdebug
+      - [ ] compose(本番,ローカル)はinfo
   - [ ] swagger
     - [ ] swagger specification v3
   - [ ] test
     - [ ] 個別にcomponent scan指定？
-    - [ ] profileによってyamlかえる？
 - infra
-  - [ ] docker compose
+  - [ ] bootRun
+    - [ ] redisの初期化が動いて落ちる
+      - [ ] profileによって、redisのコンポーネント初期化をやめる？
+  - [x] docker compose
     - [x] localだけ
     - [x] redis+java
   - [ ] cdk

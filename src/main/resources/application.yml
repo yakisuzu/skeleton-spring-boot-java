@@ -2,3 +2,7 @@ spring:
   redis:
     host: session
     port: 6379
+
+logging:
+  level:
+    root: debug
