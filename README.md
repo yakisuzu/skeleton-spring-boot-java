@@ -3,11 +3,12 @@
 ## TODO
 - app
   - [ ] spring mvc
-    - [ ] 存在しないURLで404+json
+    - [x] 存在しないURLで404+json
     - [ ] validation errorで400
       - [ ] query param
         - [x] パラメータ名が正しいが、型がおかしい
-        - [ ] パラメータ名の指定間違い/指定無し
+        - [x] パラメータ名の指定間違い/指定無し
+        - [ ] エラーメッセージをコントロールする
       - [ ] post param
   - [ ] spring security
     - [ ] OAuth2
@@ -25,6 +26,7 @@
     - [ ] swagger specification v3
   - [ ] test
     - [ ] 個別にcomponent scan指定？
+    - [ ] そもそもデフォルトのyamlで接続先指定するのがおかしい？
 - infra
   - [ ] bootRun
     - [ ] redisの初期化が動いて落ちる

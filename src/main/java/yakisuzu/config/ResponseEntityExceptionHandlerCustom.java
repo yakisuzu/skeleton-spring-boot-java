@@ -31,7 +31,7 @@ import javax.validation.ConstraintViolationException;
 public class ResponseEntityExceptionHandlerCustom extends ResponseEntityExceptionHandler {
     private static Logger logger = LoggerFactory.getLogger(ResponseEntityExceptionHandlerCustom.class);
 
-    @ExceptionHandler
+    @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException ex, WebRequest request) {
         return handleExceptionInternal(ex, null, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
     }
@@ -39,12 +39,12 @@ public class ResponseEntityExceptionHandlerCustom extends ResponseEntityExceptio
     @Override
     protected ResponseEntity<Object> handleExceptionInternal(Exception ex, Object body, HttpHeaders headers, HttpStatus status, WebRequest request) {
         // bodyがnullでくるので、共通フォーマットに変更
-        return super.handleExceptionInternal(ex, toBody(ex), headers, status, request);
+        return super.handleExceptionInternal(ex, toBody(ex, status), headers, status, request);
     }
 
-    ErrorResponseDto toBody(Exception ex) {
+    ErrorResponseDto toBody(Exception ex, HttpStatus status) {
         String errorName = ex.getClass().getSimpleName();
-        logger.debug(errorName);
+        logger.debug("{}: status={}", errorName, status.value());
 
         if (ex instanceof HttpRequestMethodNotSupportedException) {
             logger.error("{}: TODO", errorName);
@@ -86,7 +86,8 @@ public class ResponseEntityExceptionHandlerCustom extends ResponseEntityExceptio
             logger.error("{}: TODO", errorName);
             return ErrorResponseDtoFactory.ofDefault(errorName, (BindException) ex);
         } else if (ex instanceof NoHandlerFoundException) {
-            logger.error("{}: TODO", errorName);
+            // application.ymlで/errorへのmappingを無効済
+            logger.error("{}: NotFound", errorName);
             return ErrorResponseDtoFactory.ofDefault(errorName, (NoHandlerFoundException) ex);
         } else if (ex instanceof AsyncRequestTimeoutException) {
             logger.error("{}: TODO", errorName);
