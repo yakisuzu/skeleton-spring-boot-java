@@ -2,6 +2,11 @@ version: "3.7"
 services:
   app:
     build: ../../app
+    environment:
+      - AWS_COGNITO_POOL_ID
+      - AWS_COGNITO_CLIENT_ID
+      - AWS_COGNITO_CLIENT_SECRET
+      - AWS_COGNITO_CLIENT_CALLBACK_URI
     ports:
       - "8080:8080"
     networks:

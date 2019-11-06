@@ -1,8 +1,10 @@
 spring:
-  data:
-    redis:
-      repositories:
-        enabled: false
+  session:
+    store-type: none
+  security:
+    user:
+      name: user
+      password: useruser
 
 logging:
   level:
