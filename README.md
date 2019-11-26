@@ -1,6 +1,6 @@
 # skeleton-spring-boot-java
 
-## TODO
+## アーキテクト残
 - app
   - [ ] spring mvc
     - [x] 存在しないURLで404+json
@@ -41,6 +41,28 @@
   - [ ] swagger
     - [ ] swagger ui + s3?
 
+## TODO残
+- application.ymlでほかのプロパティとれない
+- cognitoログイン設定
+
+## develop
+### build
+`./gradlew build`
+
+### docker-compose
+#### init env
+`touch .env`
+
+```
+SPRING_PROFILE=dev
+AWS_COGNITO_POOL_ID=...
+```
+
+#### up
+`make docker-compose-up`
+
+#### down
+Ctrl+C && `make docker-compose-down`
 
 ## Reference Documentation
 ### spring-boot
@@ -51,3 +73,4 @@
 
 ### spring-security
 - https://docs.spring.io/spring-security/site/docs/5.1.6.RELEASE/reference/htmlsingle/
+

@@ -3,6 +3,7 @@ services:
   app:
     build: ../../app
     environment:
+      - SPRING_PROFILE
       - AWS_COGNITO_POOL_ID
       - AWS_COGNITO_CLIENT_ID
       - AWS_COGNITO_CLIENT_SECRET

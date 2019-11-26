@@ -1,4 +1,6 @@
 env:
+  spring:
+    profile: ${SPRING_PROFILE}
   cognito:
     pool-id: ${AWS_COGNITO_POOL_ID}
     client:
@@ -7,6 +9,8 @@ env:
       callback-uri: ${AWS_COGNITO_CLIENT_CALLBACK_URI}
 
 spring:
+  profiles:
+    active: ${SPRING_PROFILE}
   mvc:
     throw-exception-if-no-handler-found: true
   resources:

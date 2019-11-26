@@ -14,3 +14,7 @@ docker-compose-up: ## docker-compose up
 
 docker-compose-down: ## docker-compose down
 	@docker-compose -f ops/docker-compose/base/docker-compose.yml -p app-local down
+
+docker-rmi-none: ## docker rmi <none> images
+	@docker rmi $(shell docker images -f "dangling=true" -q)
+	@docker images

@@ -4,27 +4,27 @@ spring:
   redis:
     host: session
     port: 6379
-  security:
-    oauth2:
-      client:
-        registration:
-          client-cognito:
-            client-id: ${env.cognito.client.id}
-            client-secret: ""
-            client-name: ""
-            provider: ""
-            scope: ""
-            redirect-uri-template: ""
-            client-authentication-method: ""
-            authorization-grant-type: ""
-        provider:
-          provider-cognito:
-            authorization-uri: ""
-            token-uri: ""
-            user-info-uri: ""
-            user-info-authentication-method: ""
-            jwk-set-uri: ""
-            user-name-attribute: ""
+# security:
+#   oauth2:
+#     client:
+#       registration:
+#         client-cognito:
+#           client-id: ${env.cognito.client.id}
+#           client-secret: ""
+#           client-name: ""
+#           provider: ""
+#           scope: ""
+#           redirect-uri-template: ""
+#           client-authentication-method: ""
+#           authorization-grant-type: ""
+#       provider:
+#         provider-cognito:
+#           authorization-uri: ""
+#           token-uri: ""
+#           user-info-uri: ""
+#           user-info-authentication-method: ""
+#           jwk-set-uri: ""
+#           user-name-attribute: ""
 
 logging:
   level:
