@@ -73,11 +73,15 @@ AWS_COGNITO_POOL_ID=...
 Ctrl+C && `make docker-compose-down`
 
 ## Reference Documentation
+### spring-framework
+- https://docs.spring.io/spring/docs/5.1.9.RELEASE/spring-framework-reference
+- https://docs.spring.io/spring/docs/5.1.9.RELEASE/spring-framework-reference/core.html#spring-core
+
 ### spring-boot
-- https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/htmlsingle/#boot-features-external-config
-- https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/htmlsingle/#boot-features-security
-- https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/htmlsingle/#boot-features-security-oauth2
-- https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications
+- https://docs.spring.io/spring-boot/docs/2.1.7.RELEASE/reference/htmlsingle/#boot-features-external-config
+- https://docs.spring.io/spring-boot/docs/2.1.7.RELEASE/reference/htmlsingle/#boot-features-security
+- https://docs.spring.io/spring-boot/docs/2.1.7.RELEASE/reference/htmlsingle/#boot-features-security-oauth2
+- https://docs.spring.io/spring-boot/docs/2.1.7.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications
 
 ### spring-security
 - https://docs.spring.io/spring-security/site/docs/5.1.6.RELEASE/reference/htmlsingle/

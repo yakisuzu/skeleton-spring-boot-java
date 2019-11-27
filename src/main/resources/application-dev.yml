@@ -4,7 +4,10 @@ spring:
   redis:
     host: session
     port: 6379
-# security:
+  security:
+    user:
+      name: user
+      password: dev
 #   oauth2:
 #     client:
 #       registration:
