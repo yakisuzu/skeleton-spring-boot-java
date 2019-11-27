@@ -20,20 +20,28 @@
   - [ ] logger
     - [ ] log設定
       - [ ] 標準出力(STD) or エラー出力(STD_ERR)
-      - [x] bootRun(ローカル)はdebug
-      - [ ] compose(本番,ローカル)はinfo
+      - [x] bootRun(bootRun/mac)はdebug
+      - [x] compose(dev/mac)はdebug
+      - [ ] compose(prd/ecs)はinfo
   - [ ] swagger
     - [ ] swagger specification v3
   - [ ] test
     - [ ] 個別にcomponent scan指定？
-    - [ ] そもそもデフォルトのyamlで接続先指定するのがおかしい？
+    - [x] redis接続しない
 - infra
-  - [ ] bootRun
-    - [ ] redisの初期化が動いて落ちる
-      - [ ] profileによって、redisのコンポーネント初期化をやめる？
+  - [x] bootRun
+    - [x] redisの初期化が動いて落ちる
+      - [x] profileによって、redisのコンポーネント初期化をやめる
   - [x] docker compose
     - [x] localだけ
     - [x] redis+java
+    - [x] 環境変数をわたして起動わけする
+  - [ ] GitHub Actions
+    - [x] なんか動いた
+    - [ ] 全てでビルド && テスト
+    - [ ] masterだけECRにpush && デプロイ
+  - [ ] ECS
+    - [ ] うごかす
   - [ ] cdk
     - [ ] cognito
     - [ ] ecs
