@@ -40,7 +40,7 @@
   - [ ] GitHub Actions
     - [x] なんか動いた
     - [ ] 全てでビルド && テスト
-    - [ ] masterだけECRにpush && デプロイ
+    - [ ] masterだけdocker build && ECR push && デプロイ
   - [ ] ECS
     - [ ] うごかす
   - [ ] cdk
@@ -53,6 +53,8 @@
 ## TODO残
 - application.ymlでほかのプロパティとれない
 - cognitoログイン設定
+- actionsでdocker build
+- actionsでecr push
 
 ## develop
 ### build
