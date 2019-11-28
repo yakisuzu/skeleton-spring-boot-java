@@ -17,12 +17,13 @@
         - [ ] 削除API
   - [x] spring session
     - [x] redis
-  - [ ] logger
-    - [ ] log設定
-      - [ ] 標準出力(STD) or エラー出力(STD_ERR)
+  - [x] logger
+    - [x] log設定
+      - [x] 標準出力(STDOUT)
+      - [x] エラー出力(STDERR)
       - [x] bootRun(bootRun/mac)はdebug
       - [x] compose(dev/mac)はdebug
-      - [ ] compose(prd/ecs)はinfo
+      - [x] compose(prd/ecs)はinfo
   - [ ] swagger
     - [ ] swagger specification v3
   - [ ] test
