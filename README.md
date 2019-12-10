@@ -93,4 +93,5 @@ Ctrl+C && `make docker-compose-down`
 
 ### GitHub Actions
 - https://github.com/marketplace?type=actions
+- https://github.com/aws-actions/configure-aws-credentials
 - https://github.com/aws-actions/amazon-ecr-login
