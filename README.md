@@ -41,6 +41,8 @@
     - [x] なんか動いた
     - [ ] 全てでビルド && テスト
     - [ ] masterだけdocker build && ECR push && デプロイ
+    - [ ] キャッシュ利かす https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/caching-dependencies-to-speed-up-workflows
+    - [ ] artifacts利かす https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/persisting-workflow-data-using-artifacts
   - [ ] ECS
     - [ ] うごかす
   - [ ] cdk
@@ -89,3 +91,6 @@ Ctrl+C && `make docker-compose-down`
 ### spring-security
 - https://docs.spring.io/spring-security/site/docs/5.1.6.RELEASE/reference/htmlsingle/
 
+### GitHub Actions
+- https://github.com/marketplace?type=actions
+- https://github.com/aws-actions/amazon-ecr-login

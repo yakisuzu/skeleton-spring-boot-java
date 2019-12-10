@@ -1,19 +1,39 @@
 name: Java CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - '*'
 
 jobs:
-  build:
-
+  build_and_test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
-      - name: Set up JDK 11
+      - name: JDK 11
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: build
+      - name: app build
         run: ./gradlew build -x test
-      - name: test
+      - name: app test
         run: ./gradlew test
+
+      - name: ECR login
+        if: github.ref == 'refs/heads/master'
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - run: echo "after ECR login"
+
+      - name: docker build, ECR push
+        if: github.ref == 'refs/heads/master'
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
+        run: |
+          docker build -t ${ECR_REGISTRY}/${ECR_REPOSITORY}:${GITHUB_SHA} ./ops/app/
+          docker push ${ECR_REGISTRY}/${ECR_REPOSITORY}:${GITHUB_SHA}
+      - name: ECR logout
+        if: always()
+        run: docker logout ${{ steps.login-ecr.outputs.registry }}
+      - run: echo "after ECR logout"
