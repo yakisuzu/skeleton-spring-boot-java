@@ -43,19 +43,19 @@ jobs:
         if: always()
         run: docker logout ${{ steps.login-ecr.outputs.registry }}
 
-#      - name: render ECS task definition
+      - name: render ECS task definition
 #        if: github.ref == 'refs/heads/master'
-#        id: render-web-container
-#        uses: aws-actions/amazon-ecs-render-task-definition@v1
-#        with:
-#          task-definition: ./ops/ECS/task-definition.json
-#          container-name: ${{ secrets.ECS_CONTAINER_NAME }}
-#          image: ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha }}
+        id: render-web-container
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: ./ops/ECS/task-definition.json
+          container-name: ${{ secrets.ECS_CONTAINER_NAME }}
+          image: ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha }}
 
-#      - name: deploy ECS
+      - name: deploy ECS
 #        if: github.ref == 'refs/heads/master'
-#        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-#        with:
-#          task-definition: ${{ steps.render-web-container.outputs.task-definition }}
-#          service: ${{ secrets.ECS_SERVICE_NAME }}
-#          cluster: ${{ secrets.ECS_CLUSTER_NAME }}
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.render-web-container.outputs.task-definition }}
+          service: ${{ secrets.ECS_SERVICE_NAME }}
+          cluster: ${{ secrets.ECS_CLUSTER_NAME }}
