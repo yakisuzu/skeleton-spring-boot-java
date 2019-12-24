@@ -39,10 +39,10 @@
     - [x] 環境変数をわたして起動わけする
   - [ ] GitHub Actions
     - [x] なんか動いた
-    - [ ] 全てでビルド && テスト
-    - [ ] masterだけdocker build && ECR push && デプロイ
-    - [ ] キャッシュ利かす https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/caching-dependencies-to-speed-up-workflows
-    - [ ] artifacts利かす https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/persisting-workflow-data-using-artifacts
+    - [x] 全てでビルド && テスト
+    - [x] masterだけdocker build && ECR push && デプロイ
+    - [x] キャッシュ利かす https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/caching-dependencies-to-speed-up-workflows
+    - [x] artifacts利かす https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/persisting-workflow-data-using-artifacts
   - [ ] ECS
     - [ ] うごかす
   - [ ] cdk
@@ -93,5 +93,11 @@ Ctrl+C && `make docker-compose-down`
 
 ### GitHub Actions
 - https://github.com/marketplace?type=actions
+- https://github.com/actions/checkouk
+- https://github.com/actions/setup-java
+- https://github.com/actions/upload-artifact
+- https://github.com/actions/download-artifact
 - https://github.com/aws-actions/configure-aws-credentials
 - https://github.com/aws-actions/amazon-ecr-login
+- https://github.com/aws-actions/amazon-ecs-render-task-definition
+- https://github.com/aws-actions/amazon-ecs-deploy-task-definition
