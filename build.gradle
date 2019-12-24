@@ -100,7 +100,6 @@ bootRun {
 
 test {
     jvmArgs = ["-Dspring.profiles.active=test"]
-
     // https://junit.org/junit5/docs/current/user-guide/#running-tests-ide-intellij-idea
     // https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle
     useJUnitPlatform()
