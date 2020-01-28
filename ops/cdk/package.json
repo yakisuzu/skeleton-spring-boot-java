@@ -18,22 +18,22 @@
     "cdk:synth": "cdk synth"
   },
   "devDependencies": {
-    "@types/node": "^12.7.2",
-    "@typescript-eslint/eslint-plugin": "^2.0.0",
-    "@typescript-eslint/parser": "^2.0.0",
-    "aws-cdk": "^1.4.0",
-    "eslint": "^6.2.1",
-    "eslint-config-prettier": "^6.1.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.18.2",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
+    "@types/node": "12",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "aws-cdk": "^1.22.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
   },
   "dependencies": {
-    "@aws-cdk/aws-cognito": "^1.4.0",
-    "@aws-cdk/aws-sns": "^1.4.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.4.0",
-    "@aws-cdk/aws-sqs": "^1.4.0",
-    "@aws-cdk/core": "^1.4.0"
+    "@aws-cdk/aws-cognito": "^1.22.0",
+    "@aws-cdk/aws-sns": "^1.22.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.22.0",
+    "@aws-cdk/aws-sqs": "^1.22.0",
+    "@aws-cdk/core": "^1.22.0"
   }
 }
