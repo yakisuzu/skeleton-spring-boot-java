@@ -1,5 +1,9 @@
 # skeleton-spring-boot-java
 
+## TODO残
+- application.ymlでほかのプロパティとれない
+- cognitoログイン設定
+
 ## アーキテクト残
 - app
   - [ ] spring mvc
@@ -37,26 +41,23 @@
     - [x] localだけ
     - [x] redis+java
     - [x] 環境変数をわたして起動わけする
-  - [ ] GitHub Actions
+  - [x] GitHub Actions
     - [x] なんか動いた
     - [x] 全てでビルド && テスト
     - [x] masterだけdocker build && ECR push && デプロイ
-    - [x] キャッシュ利かす https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/caching-dependencies-to-speed-up-workflows
-    - [x] artifacts利かす https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/persisting-workflow-data-using-artifacts
+    - [x] キャッシュ利かす  
+    https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/caching-dependencies-to-speed-up-workflows
+    - [x] artifacts利かす  
+    https://help.github.com/ja/actions/automating-your-workflow-with-github-actions/persisting-workflow-data-using-artifacts
   - [ ] ECS
-    - [ ] うごかす
+    - [x] うごかす
+    - [ ] 環境わける
   - [ ] cdk
     - [ ] cognito
     - [ ] ecs
     - [ ] s3
   - [ ] swagger
     - [ ] swagger ui + s3?
-
-## TODO残
-- application.ymlでほかのプロパティとれない
-- cognitoログイン設定
-- actionsでdocker build
-- actionsでecr push
 
 ## develop
 ### build
@@ -93,7 +94,7 @@ Ctrl+C && `make docker-compose-down`
 
 ### GitHub Actions
 - https://github.com/marketplace?type=actions
-- https://github.com/actions/checkouk
+- https://github.com/actions/checkout
 - https://github.com/actions/setup-java
 - https://github.com/actions/cache
 - https://github.com/actions/upload-artifact
