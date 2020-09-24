@@ -4,16 +4,13 @@
   "engines": {
     "node": "12"
   },
-  "bin": {
-    "sample-app": "bin/sample-app.js"
-  },
   "scripts": {
     "lint": "eslint --ext ts .",
     "lint:fix": "eslint --ext ts . --fix",
     "prettier:write": "prettier **/*.ts --write",
     "build": "tsc",
     "watch": "tsc -w",
-    "cdk": "cdk",
+    "cdk:ls": "cdk ls -l",
     "cdk:diff": "cdk diff",
     "cdk:synth": "cdk synth"
   },
